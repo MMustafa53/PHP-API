@@ -1,0 +1,277 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:ns4="http://www.opengis.net/wps/1.0.0" xmlns:ns3="http://schemas.xmlsoap.org/ws/2003/03/addressing" xmlns:tns="http://toolbox.pisa.intecs.it/soap/WPS/WPSsoap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="AIP3_PV_Impact" targetNamespace="http://toolbox.pisa.intecs.it/soap/WPS/WPSsoap">
+    <wsdl:types>
+        <xsd:schema>
+            <xsd:import namespace="http://schemas.xmlsoap.org/ws/2003/03/addressing" schemaLocation="http://schemas.xmlsoap.org/ws/2003/03/addressing/addressing.xsd"/>
+            <xsd:import namespace="http://toolbox.pisa.intecs.it/soap/WPS/WPSsoap" schemaLocation="http://toolbox.webservice-energy.org:80/TOOLBOX/WSDL/AIP3_PV_Impact/WPSSoapAll.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="StartHeader">
+        <wsdl:part element="ns3:MessageID" name="MessageID"/>
+        <wsdl:part element="ns3:ReplyTo" name="ReplyTo"/>
+    </wsdl:message>
+    <wsdl:message name="ContinueHeader">
+        <wsdl:part element="ns3:RelatesTo" name="RelatesTo"/>
+    </wsdl:message>
+    <wsdl:message name="GetCapabilitiesInput">
+        <wsdl:part element="ns4:GetCapabilities" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="GetCapabilitiesOutput">
+        <wsdl:part element="ns4:Capabilities" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="DescribeProcessInput">
+        <wsdl:part element="ns4:DescribeProcess" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="DescribeProcessOutput">
+        <wsdl:part element="ns4:ProcessDescriptions" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteInput">
+        <wsdl:part element="ns4:Execute" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteOutput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVInput">
+        <wsdl:part element="tns:ExecuteProcess_computeImpactPV" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVOutput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPV_ASYNCInput">
+        <wsdl:part element="tns:ExecuteProcess_computeImpactPV" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPV_ASYNCOutput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPV_ASYNC_statusUpdateInput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPV_ASYNC_statusUpdateOutput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMapInput">
+        <wsdl:part element="tns:ExecuteProcess_computeImpactPVMap" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMapOutput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMap_ASYNCInput">
+        <wsdl:part element="tns:ExecuteProcess_computeImpactPVMap" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMap_ASYNCOutput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMap_ASYNC_statusUpdateInput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMap_ASYNC_statusUpdateOutput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMap2Input">
+        <wsdl:part element="tns:ExecuteProcess_computeImpactPVMap2" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMap2Output">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMap2_ASYNCInput">
+        <wsdl:part element="tns:ExecuteProcess_computeImpactPVMap2" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMap2_ASYNCOutput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMap2_ASYNC_statusUpdateInput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="ExecuteProcess_computeImpactPVMap2_ASYNC_statusUpdateOutput">
+        <wsdl:part element="ns4:ExecuteResponse" name="parameters"/>
+    </wsdl:message>
+    <wsdl:portType name="AIP3_PV_Impact">
+        <wsdl:operation name="GetCapabilities">
+            <wsdl:input message="tns:GetCapabilitiesInput"/>
+            <wsdl:output message="tns:GetCapabilitiesOutput"/>
+        </wsdl:operation>
+        <wsdl:operation name="DescribeProcess">
+            <wsdl:input message="tns:DescribeProcessInput"/>
+            <wsdl:output message="tns:DescribeProcessOutput"/>
+        </wsdl:operation>
+        <wsdl:operation name="Execute">
+            <wsdl:input message="tns:ExecuteInput"/>
+            <wsdl:output message="tns:ExecuteOutput"/>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPV">
+            <wsdl:input message="tns:ExecuteProcess_computeImpactPVInput"/>
+            <wsdl:output message="tns:ExecuteProcess_computeImpactPVOutput"/>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPV_ASYNC">
+            <wsdl:input message="tns:ExecuteProcess_computeImpactPV_ASYNCInput"/>
+            <wsdl:output message="tns:ExecuteProcess_computeImpactPV_ASYNCOutput"/>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap">
+            <wsdl:input message="tns:ExecuteProcess_computeImpactPVMapInput"/>
+            <wsdl:output message="tns:ExecuteProcess_computeImpactPVMapOutput"/>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap_ASYNC">
+            <wsdl:input message="tns:ExecuteProcess_computeImpactPVMap_ASYNCInput"/>
+            <wsdl:output message="tns:ExecuteProcess_computeImpactPVMap_ASYNCOutput"/>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap2">
+            <wsdl:input message="tns:ExecuteProcess_computeImpactPVMap2Input"/>
+            <wsdl:output message="tns:ExecuteProcess_computeImpactPVMap2Output"/>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap2_ASYNC">
+            <wsdl:input message="tns:ExecuteProcess_computeImpactPVMap2_ASYNCInput"/>
+            <wsdl:output message="tns:ExecuteProcess_computeImpactPVMap2_ASYNCOutput"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="AIP3_PV_ImpactCallback">
+        <wsdl:operation name="ExecuteProcess_computeImpactPV_ASYNC_statusUpdate">
+            <wsdl:input message="tns:ExecuteProcess_computeImpactPV_ASYNC_statusUpdateInput"/>
+            <wsdl:output message="tns:ExecuteProcess_computeImpactPV_ASYNC_statusUpdateOutput"/>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap_ASYNC_statusUpdate">
+            <wsdl:input message="tns:ExecuteProcess_computeImpactPVMap_ASYNC_statusUpdateInput"/>
+            <wsdl:output message="tns:ExecuteProcess_computeImpactPVMap_ASYNC_statusUpdateOutput"/>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap2_ASYNC_statusUpdate">
+            <wsdl:input message="tns:ExecuteProcess_computeImpactPVMap2_ASYNC_statusUpdateInput"/>
+            <wsdl:output message="tns:ExecuteProcess_computeImpactPVMap2_ASYNC_statusUpdateOutput"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="AIP3_PV_ImpactSoapBinding" type="tns:AIP3_PV_Impact">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetCapabilities">
+            <soap:operation soapAction="GetCapabilities"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DescribeProcess">
+            <soap:operation soapAction="DescribeProcess"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="Execute">
+            <soap:operation soapAction="Execute"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPV">
+            <soap:operation soapAction="ExecuteProcess_computeImpactPV"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPV_ASYNC">
+            <soap:operation soapAction="ExecuteProcess_computeImpactPV_ASYNC"/>
+            <wsdl:input>
+                <soap:header message="tns:StartHeader" part="MessageID" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap">
+            <soap:operation soapAction="ExecuteProcess_computeImpactPVMap"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap_ASYNC">
+            <soap:operation soapAction="ExecuteProcess_computeImpactPVMap_ASYNC"/>
+            <wsdl:input>
+                <soap:header message="tns:StartHeader" part="MessageID" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap2">
+            <soap:operation soapAction="ExecuteProcess_computeImpactPVMap2"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap2_ASYNC">
+            <soap:operation soapAction="ExecuteProcess_computeImpactPVMap2_ASYNC"/>
+            <wsdl:input>
+                <soap:header message="tns:StartHeader" part="MessageID" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="AIP3_PV_ImpactCallbackSoapBinding" type="tns:AIP3_PV_ImpactCallback">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="ExecuteProcess_computeImpactPV_ASYNC_statusUpdate">
+            <soap:operation soapAction="ExecuteProcess_computeImpactPV_ASYNC_statusUpdate"/>
+            <wsdl:input>
+                <soap:header message="tns:ContinueHeader" part="RelatesTo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap_ASYNC_statusUpdate">
+            <soap:operation soapAction="ExecuteProcess_computeImpactPVMap_ASYNC_statusUpdate"/>
+            <wsdl:input>
+                <soap:header message="tns:ContinueHeader" part="RelatesTo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="ExecuteProcess_computeImpactPVMap2_ASYNC_statusUpdate">
+            <soap:operation soapAction="ExecuteProcess_computeImpactPVMap2_ASYNC_statusUpdate"/>
+            <wsdl:input>
+                <soap:header message="tns:ContinueHeader" part="RelatesTo" use="literal"/>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AIP3_PV_Impact">
+        <wsdl:port binding="tns:AIP3_PV_ImpactSoapBinding" name="AIP3_PV_Impact">
+            <soap:address location="http://toolbox.webservice-energy.org:80/TOOLBOX/services/AIP3_PV_Impact"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsdl:service name="AIP3_PV_ImpactCallback">
+        <wsdl:port binding="tns:AIP3_PV_ImpactCallbackSoapBinding" name="AIP3_PV_ImpactCallback">
+            <soap:address location="http://openuri.org"/>
+        </wsdl:port>
+    </wsdl:service>
+    <plnk:partnerLinkType name="AIP3_PV_Impact">
+        <plnk:role name="AIP3_PV_ImpactServiceProvider">
+            <plnk:portType name="tns:AIP3_PV_Impact"/>
+        </plnk:role>
+        <plnk:role name="AIP3_PV_ImpactServiceRequester">
+            <plnk:portType name="tns:AIP3_PV_ImpactCallback"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+</wsdl:definitions>

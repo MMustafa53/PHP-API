@@ -1,0 +1,26 @@
+{
+  "Date": "2019-09-02T07:00:00+03:00",
+  "EpochDate": 1567396800,
+  "Temperature": {
+    "Minimum": {
+      "Value": 62,
+      "Unit": "F",
+      "UnitType": 18
+    },
+    "Maximum": {
+      "Value": 91,
+      "Unit": "F",
+      "UnitType": 18
+    }
+  },
+  "Day": {
+    "Icon": 2,
+    "IconPhrase": "Mostly sunny",
+    "HasPrecipitation": false
+  },
+  "Night": {
+    "Icon": 34,
+    "IconPhrase": "Mostly clear",
+    "HasPrecipitation": false
+  }
+}
